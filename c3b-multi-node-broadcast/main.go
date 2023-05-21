@@ -111,8 +111,7 @@ func main() {
 
 	ticker := time.NewTicker(1 * time.Second)
 	go func() {
-		for {
-			<-ticker.C
+		for range ticker.C {
 			myNode.runBroadcastDispatcher()
 		}
 	}()
